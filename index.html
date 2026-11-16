@@ -29,12 +29,15 @@ section{padding:48px 0}h2{font-size:1.8rem;margin:0 0 8px}.sub{color:var(--muted
 .note{background:var(--card);border-left:4px solid var(--acc);padding:16px 20px;border-radius:8px;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
 .wa{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+form.card{display:grid;gap:12px;max-width:640px}
+label{font-weight:600;font-size:.9rem}input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+.row2{display:grid;gap:12px;grid-template-columns:1fr 1fr}@media(max-width:600px){.row2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
  <div class="brand">MetaGenix <span>Labs</span></div>
- <ul><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#work">Our work</a></li><li><a href="#contact">Contact</a></li></ul>
+ <ul><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#work">Our work</a></li><li><a href="tools.html">Free tools</a></li><li><a href="#enquiry">Enquiry</a></li><li><a href="#contact">Contact</a></li></ul>
 </nav></div></header>
 
 <main class="wrap">
@@ -81,6 +84,33 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <section>
  <div class="note"><strong>What we do not do:</strong> we do not run a wet lab or offer medical or diagnostic testing. Sample processing and sequencing, when needed, are done by an accredited partner lab. All results are research-use only.</div>
 </section>
+
+<section id="enquiry">
+ <h2>Project enquiry</h2><p class="sub">Fill this in and send it on WhatsApp or by email. Nothing is stored on this website.</p>
+ <form class="card" id="enq" onsubmit="return false">
+  <div class="row2"><div><label for="nm">Name</label><input id="nm" required></div>
+  <div><label for="inst">Institution / company</label><input id="inst"></div></div>
+  <div class="row2"><div><label for="svc">Service</label><select id="svc">
+   <option>NGS data analysis</option><option>Metagenomics</option><option>Variant calling</option><option>DNA barcoding analysis</option>
+   <option>Molecular docking</option><option>ML for biological data</option><option>Student project guidance</option><option>Not sure yet</option></select></div>
+  <div><label for="dt">Data type</label><select id="dt">
+   <option>Illumina FASTQ (paired-end)</option><option>Illumina FASTQ (single-end)</option><option>Nanopore / PacBio</option>
+   <option>Sanger sequences (.ab1 / FASTA)</option><option>Protein / ligand structures</option><option>No data yet</option><option>Other</option></select></div></div>
+  <div class="row2"><div><label for="ns">Number of samples</label><input id="ns" type="number" min="0"></div>
+  <div><label for="dl">Deadline</label><input id="dl" type="date"></div></div>
+  <div><label for="msg">Your question or goal</label><textarea id="msg" rows="4" placeholder="e.g. identify bacteria in 6 soil metagenomes and compare functions"></textarea></div>
+  <div><button class="btn" type="button" onclick="send('wa')">Send on WhatsApp</button><button class="btn ghost" type="button" onclick="send('mail')">Send by email</button></div>
+ </form>
+</section>
+<script>
+function send(how){
+ const v=id=>document.getElementById(id).value.trim();
+ if(!v('nm')){alert('Please enter your name');return;}
+ const t=`Project enquiry (MetaGenix Labs website)\nName: ${v('nm')}\nInstitution: ${v('inst')||'-'}\nService: ${v('svc')}\nData type: ${v('dt')}\nSamples: ${v('ns')||'-'}\nDeadline: ${v('dl')||'-'}\nGoal: ${v('msg')||'-'}`;
+ if(how==='wa') window.open('https://wa.me/916381975136?text='+encodeURIComponent(t),'_blank');
+ else location.href='mailto:vshreejan@gmail.com?subject='+encodeURIComponent('Project enquiry: '+v('svc'))+'&body='+encodeURIComponent(t);
+}
+</script>
 
 <section id="contact">
  <h2>Contact</h2><p class="sub">Free first consultation. We usually reply within 24 hours.</p>

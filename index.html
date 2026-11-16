@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenoMetrix Bio | Bioinformatics Analysis Services</title>
+<meta name="description" content="Dry-lab bioinformatics services: NGS analysis, metagenomics, variant calling, DNA barcoding analysis and molecular docking.">
+<style>
+:root{--bg:#f7f9fb;--card:#fff;--ink:#14202b;--muted:#5b6b7a;--acc:#0f7b6c;--acc2:#0b5c51;--line:#e3e8ee}
+@media (prefers-color-scheme:dark){:root{--bg:#0f161d;--card:#16212b;--ink:#e8eef3;--muted:#9fb0bf;--acc:#3fbfa6;--acc2:#2a9c86;--line:#24323f}}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc)}.wrap{max-width:1080px;margin:auto;padding:0 16px}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;font-size:1.2rem}.brand span{color:var(--acc)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}nav ul a{color:var(--ink);text-decoration:none;font-size:.95rem}
+@media(max-width:700px){nav ul{display:none}}
+.hero{padding:72px 0 48px}.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0 0 16px}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:640px}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;margin:8px 8px 0 0}
+.btn.ghost{background:none;color:var(--acc);border:1px solid var(--acc)}
+section{padding:48px 0}h2{font-size:1.8rem;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{margin:0 0 8px;font-size:1.1rem}.card p,.card li{color:var(--muted);font-size:.95rem}.card ul{padding-left:18px;margin:8px 0 0}
+.tag{display:inline-block;font-size:.75rem;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:2px 10px;margin:4px 4px 0 0;color:var(--muted)}
+.steps{counter-reset:s}.steps .card{position:relative;padding-top:44px}
+.steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:22px;background:var(--acc);color:#fff;width:24px;height:24px;border-radius:50%;text-align:center;font-weight:700;font-size:.85rem;line-height:24px}
+.note{background:var(--card);border-left:4px solid var(--acc);padding:16px 20px;border-radius:8px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+.wa{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;padding:12px 18px;border-radius:30px;text-decoration:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+ <div class="brand">GenoMetrix <span>Bio</span></div>
+ <ul><li><a href="#services">Services</a></li><li><a href="#process">How it works</a></li><li><a href="#work">Our work</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
+
+<main class="wrap">
+<div class="hero">
+ <h1>Your sequencing data,<br>analysed and explained.</h1>
+ <p>Dry-lab bioinformatics for students, researchers and small labs. Send us your raw data; get back clean results, publication-ready figures and a report you can understand.</p>
+ <a class="btn" href="#contact">Get a free quote</a><a class="btn ghost" href="#services">View services</a>
+</div>
+
+<section id="services">
+ <h2>Services</h2><p class="sub">All analysis is computational. You provide the data, or we coordinate sequencing through a partner lab.</p>
+ <div class="grid">
+  <div class="card"><h3>NGS data analysis</h3><p>Quality control, trimming, genome and metagenome assembly.</p><span class="tag">FastQC</span><span class="tag">fastp</span><span class="tag">MEGAHIT</span><span class="tag">QUAST</span></div>
+  <div class="card"><h3>Metagenomics</h3><p>Taxonomic profiling, genome binning (MAGs), quality checks and functional annotation.</p><span class="tag">Kraken2</span><span class="tag">MetaBAT2</span><span class="tag">CheckM2</span><span class="tag">GTDB-Tk</span><span class="tag">eggNOG</span></div>
+  <div class="card"><h3>Variant calling</h3><p>Alignment, variant calling and functional annotation for DNA-seq data.</p><span class="tag">BWA-MEM</span><span class="tag">GATK</span><span class="tag">Ensembl VEP</span></div>
+  <div class="card"><h3>DNA barcoding analysis</h3><p>Already have Sanger sequences? We clean the reads, identify species and build phylogenetic trees.</p><span class="tag">BLAST</span><span class="tag">BOLD</span><span class="tag">Phylogenetics</span></div>
+  <div class="card"><h3>Molecular docking</h3><p>Protein-ligand docking and interaction analysis for drug-discovery and student projects.</p><span class="tag">AutoDock Vina</span><span class="tag">PyMOL</span></div>
+  <div class="card"><h3>ML for biological data</h3><p>Classification and prediction models with honest, leakage-free evaluation.</p><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">PyTorch</span></div>
+  <div class="card"><h3>Student project guidance</h3><p>Bioinformatics projects for B.Sc., M.Sc., B.Tech and M.Tech students: planning, analysis and figures. You do the learning; we guide it.</p></div>
+ </div>
+</section>
+
+<section id="process">
+ <h2>How it works</h2><p class="sub">Simple, transparent, and you keep ownership of your data.</p>
+ <div class="grid steps">
+  <div class="card"><h3>Consult</h3><p>Tell us about your samples, data and question. Free first discussion.</p></div>
+  <div class="card"><h3>Quote</h3><p>A fixed price and timeline before any work starts.</p></div>
+  <div class="card"><h3>Share data</h3><p>Upload FASTQ, FASTA or other files via a secure link.</p></div>
+  <div class="card"><h3>Analyse</h3><p>Reproducible pipelines; we update you on progress.</p></div>
+  <div class="card"><h3>Deliver</h3><p>Report, figures, result tables and the methods text for your thesis or paper.</p></div>
+ </div>
+</section>
+
+<section id="work">
+ <h2>Our work</h2><p class="sub">Public projects showing the analysis we offer.</p>
+ <div class="grid">
+  <div class="card"><h3>Genome-resolved metagenomics</h3><p>Coastal sediment metagenome: QC, assembly, binning into two MAGs, GTDB-Tk taxonomy, KEGG and PlasticDB screening.</p></div>
+  <div class="card"><h3>DNA-seq variant calling</h3><p>BWA-MEM, GATK and VEP pipeline on public human data (BioProject PRJNA627318).</p><a href="https://github.com/shreejan-v/dna-seq-variant-calling-pipeline">View on GitHub</a></div>
+  <div class="card"><h3>Plastic-enzyme ML classifier</h3><p>Deep-learning and XGBoost models benchmarked against homology search.</p><a href="https://github.com/shreejan-v/mag-plastic-enzyme-ml">View on GitHub</a></div>
+  <div class="card"><h3>MAG-RAG</h3><p>AI question answering over genome annotation results, with cited answers.</p><a href="https://github.com/shreejan-v/MAG-RAG">View on GitHub</a></div>
+ </div>
+</section>
+
+<section>
+ <div class="note"><strong>What we do not do:</strong> we do not run a wet lab or offer medical or diagnostic testing. Sample processing and sequencing, when needed, are done by an accredited partner lab. All results are research-use only.</div>
+</section>
+
+<section id="contact">
+ <h2>Contact</h2><p class="sub">Free first consultation. We usually reply within 24 hours.</p>
+ <div class="grid">
+  <div class="card"><h3>WhatsApp</h3><p><a href="https://wa.me/91XXXXXXXXXX">+91 XXXXX XXXXX</a></p></div>
+  <div class="card"><h3>Email</h3><p><a href="mailto:hello@example.com">hello@example.com</a></p></div>
+  <div class="card"><h3>Location</h3><p>Chennai, Tamil Nadu. Serving clients online across India.</p></div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 GenoMetrix Bio. Research-use only. Not a diagnostic service.</div></footer>
+<a class="wa" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+</body>
+</html>
